@@ -1,0 +1,6 @@
+{
+    "env":{ 
+        "jwt_key": "secret",
+        "mongoPassword": "Akshay123"
+    }
+}

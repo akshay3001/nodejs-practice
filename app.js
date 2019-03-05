@@ -8,6 +8,7 @@ const bodyParser = require('body-parser');
 const mongoose = require('mongoose');
 const productsRoute = require('./api/routes/products');
 const ordersRoute = require('./api/routes/orders');
+const usersRoute = require('./api/routes/user.route');
 
 
 /**
@@ -24,7 +25,7 @@ app.use(bodyParser.json());
 /**
  * Setting up mongoDb
  */
-mongoose.connect(`mongodb://akshay:Akshay123@ds028540.mlab.com:28540/user-registration-collection`,{ 
+mongoose.connect('mongodb://akshay:'+ process.env.mongoPassword +'@ds028540.mlab.com:28540/user-registration-collection',{ 
     useNewUrlParser: true 
 });
 if(mongoose.connect) {
@@ -60,6 +61,11 @@ app.use('/products', productsRoute);
  * /orders middleware
  */
 app.use('/orders', ordersRoute);
+
+/**
+ * /user middleware
+ */
+app.use('/user', usersRoute);
 
 
 
