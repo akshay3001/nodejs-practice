@@ -9,6 +9,7 @@ const mongoose = require('mongoose');
 const productsRoute = require('./api/routes/products');
 const ordersRoute = require('./api/routes/orders');
 const usersRoute = require('./api/routes/user.route');
+const subscribeRoute = require('./api/routes/subscribe');
 
 
 /**
@@ -67,6 +68,10 @@ app.use('/orders', ordersRoute);
  */
 app.use('/user', usersRoute);
 
+/**
+ * /subscribe middleware
+ */
+app.use('/subscribe', subscribeRoute);
 
 
 /**
